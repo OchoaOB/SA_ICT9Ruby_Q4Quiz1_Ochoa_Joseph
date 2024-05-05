@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #36393f; /* Discord's background color */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            background-color: #202225; /* Discord's dark theme background color */
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            color: #fff; /* Text color */
+        }
+
+        .login-container img {
+            width: 240px;
+            margin-bottom: 10px;
+        }
+
+        .form-control {
+            border-radius: 4px;
+            margin-bottom: 15px;
+            background-color: #36393f; /* Discord's dark theme background color */
+            border: none;
+            padding: 10px;
+            width: 100%;
+            color: #fff; /* Text color */
+            transition: background-color 0.3s ease;
+        }
+
+        .form-control:hover {
+            background-color: #40444b; /* Darker shade on hover */
+        }
+
+        .login-btn {
+            background-color: #5865a3; /* Discord's button color */
+            border: none;
+            border-radius: 4px;
+            color: #fff; /* Text color */
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background-color: #677bc4; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="data:image/jpeg;base64,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" alt="Wumpus">
+        <div style="margin-bottom: 35px;">
+            <p style="color: #fff; font-weight: bold;">Welcome back!</p>
+            <p>We're so excited to see you again!</p>
+        </div>
+        <form action="mainpage.html" method="get">
+            <input type="text" class="form-control" placeholder="Email">
+            <input type="password" class="form-control" placeholder="Password">
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+    </div>
+</body>
+</html>
